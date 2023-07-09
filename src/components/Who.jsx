@@ -1,5 +1,8 @@
 // import React from 'react'
 import styled from "styled-components";
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, PerspectiveCamera, RenderTexture, Text } from '@react-three/drei';
+import Cube from "./Cube";
 
 const Section = styled.div`
   height: 100vh;
@@ -70,16 +73,21 @@ const Who = () => {
     <Section>
       <Container>
         <Left>
-            {/* 3d model */}
+          <Canvas>
+            <OrbitControls enableZoom={false} autoRotate />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Cube />
+          </Canvas>
         </Left>
         <Right>
-            
-            <Title>Think Outside the Square Space</Title>
-            <WhatWeDo>
-            <Line src="./img/line.png"/>
+
+          <Title>Think Outside the Square Space</Title>
+          <WhatWeDo>
+            <Line src="./img/line.png" />
             <Subtitle>Who we Are</Subtitle></WhatWeDo>
-            <Desc>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos laudantium architecto beatae repellat ea vero magni impedit repudiandae odit, ipsam quam reiciendis iste distinctio aliquam molestiae. Accusamus odio minima eius?s</Desc>
-            <Button>See Our Works</Button>
+          <Desc>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos laudantium architecto beatae repellat ea vero magni impedit repudiandae odit, ipsam quam reiciendis iste distinctio aliquam molestiae. Accusamus odio minima eius?s</Desc>
+          <Button>See Our Works</Button>
         </Right>
       </Container>
     </Section>
