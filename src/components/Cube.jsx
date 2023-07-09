@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import  { useRef } from "react";
 import { PerspectiveCamera, RenderTexture, Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 

@@ -1,4 +1,3 @@
-// import React from "react";
 import styled from "styled-components";
 
 const Section = styled.div`
@@ -68,26 +67,24 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+
 const Navbar = () => {
   return (
     <Section>
       <Container>
-        <Links>
-          <Logo src="./img/logo.png" />
-          <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
-          </List>
-        </Links>
+        <Logo src="./img/logo.png" />
+        <List>
+          <ListItem>Home</ListItem>
+          <ListItem>Studio</ListItem>
+          <ListItem>Works</ListItem>
+          <ListItem>Contact</ListItem>
+        </List>
         <Icons>
-          {/* Changed the image due to copyright problems */}
           <Icon src="./img/search.png" />
           <Button>Hire Now</Button>
         </Icons>
       </Container>
-    </Section>
+    </Section >
   );
 };
 
