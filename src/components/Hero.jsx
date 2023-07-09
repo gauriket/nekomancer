@@ -96,7 +96,7 @@ const Hero = () => {
             <WhatWeDo>
             <Line src="./img/line.png"/>
             <Subtitle>Welcome to My Portfolio Website</Subtitle></WhatWeDo>
-            <Desc>we are here to provide you stunning websites that fit your demands</Desc>
+            <Desc>here to provide you stunning websites that fit your demands</Desc>
             <Button>Learn More</Button>
         </Left>
         <Right>
