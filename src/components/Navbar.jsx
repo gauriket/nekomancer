@@ -4,7 +4,7 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     width: 100%;
   }
 `;
@@ -16,7 +16,7 @@ const Container = styled.div`
   align-items: center;
   padding: 10px 0px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     width: 100%;
     padding: 10px;
   }
@@ -57,31 +57,24 @@ const Icon = styled.img`
   cursor: pointer;
 `;
 
-const Button = styled.button`
-  width: 100px;
-  padding: 10px;
-  background-color: #da4ea2;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`;
-
+// const Button = styled.button`
+//   width: 100px;
+//   padding: 10px;
+//   background-color: #da4ea2;
+//   color: white;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// `;
 
 const Navbar = () => {
+  
   return (
     <Section>
       <Container>
         <Logo src="./img/logo.png" />
-        <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Studio</ListItem>
-          <ListItem>Works</ListItem>
-          <ListItem>Contact</ListItem>
-        </List>
         <Icons>
-          <Icon src="./img/search.png" />
-          <Button>Hire Now</Button>
+         
         </Icons>
       </Container>
     </Section >

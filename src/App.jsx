@@ -4,8 +4,10 @@ import Who from "./components/Who";
 import Works from "./components/Works";
 import Test from "./components/Test";
 import styled from "styled-components";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const Container = styled.div`
+  height: 100%;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;
@@ -27,8 +29,10 @@ const ResponsiveContainer = styled(Container)`
 
 function App() {
   return (
+    
     <ResponsiveContainer>
-      <Hero />
+      
+    <Hero/>
       <Who />
       <Works />
       <Contact />

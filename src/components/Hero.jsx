@@ -2,15 +2,16 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import { MeshDistortMaterial, Sphere, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import Game from "./game";
 
 const Section = styled.div`
+height: 600px;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     height: 200vh;
   }
 `;
@@ -22,7 +23,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -30,24 +31,28 @@ const Container = styled.div`
   }
 `;
 
+
 const Left = styled.div`
 padding-left: 30px;
   flex: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-
-  @media only screen and (max-width: 768px) {
+  position: relative;
+  
+  @media only screen and (max-width: 2400px) and (min-width: 1401px) {
+    width: 50%;
+  }
+  
+  @media only screen and (max-width: 1400px) {
     flex: 1;
     align-items: center;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 74px;
-
-  @media only screen and (max-width: 768px) {
+  font-size: 50px;
+  @media only screen and (max-width: 1400px) {
     text-align: center;
   }
 `;
@@ -59,37 +64,37 @@ const WhatWeDo = styled.div`
 `;
 
 const Line = styled.img`
-  height: 5px;
+  height: 3px;
 `;
 
 const Subtitle = styled.h2`
+font-size: 20px;
   color: #da4ea2;
 `;
 
 const Desc = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   color: lightgray;
-  @media only screen and (max-width: 768px) {
+  
+  @media only screen and (max-width: 1400px) {
     padding: 20px;
     text-align: center;
   }
-`;
-
-const Button = styled.button`
-  background-color: #da4ea2;
-  color: white;
-  font-weight: 500;
-  width: 100px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  @media only screen and (max-width: 950px) {
+    font-size: 15px;
+  }
 `;
 
 const Right = styled.div`
   flex: 3;
+  height: 500px;
+  width: 500px
   position: relative;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 2400px) and (min-width: 1401px) {
+    width: 50%;
+
+  }
+  @media only screen and (max-width: 1400px) {
     flex: 1;
     width: 100%;
   }
@@ -106,16 +111,41 @@ const Img = styled.img`
   right: 0;
   margin: auto;
   animation: animate 2s infinite ease alternate;
-
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 2400px) and (min-width: 1401px) {
     width: 300px;
     height: 300px;
+  }
+  @media only screen and (max-width: 1400px) {
+    width: 270px;
+    height: 270px;
   }
 
   @keyframes animate {
     to {
       transform: translateY(20px);
     }
+  }
+`;
+
+const Pfp = styled.img`
+
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 30px;
+  @media only screen and (max-width: 2400px) and (min-width: 1401px) {
+    width: 300px;
+    height: 300px;
+  }
+  @media only screen and (max-width: 1400px) {
+    width: 270px;
+    height: 270px;
   }
 `;
 
@@ -126,24 +156,24 @@ const Hero = () => {
       <Navbar />
       <Container>
         <Left>
-          <Title>Nekomancer GauriKet</Title>
+          <Canvas>
+            <ambientLight intensity={1} />
+            <directionalLight position={[2, 3, -3]} />
+            <Sphere args={[1, 100, 100]} scale={2.96}>
+              <MeshDistortMaterial color="#693A9D" attach="material" distort={0.25} speed={4} />
+            </Sphere>
+          </Canvas> 
+            <Pfp src="./img/pfp.jpg" />
+            <Title>Gauri Ket</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
             <Subtitle>Welcome to My Portfolio Website</Subtitle>
           </WhatWeDo>
-          <Desc>Here to provide you stunning websites that fit your demands</Desc>
-          <Button>Learn More</Button>
+          <Desc>Designing the Future, Bit by Bit: A Journey through the Projects and Innovations of a Computer Science Student</Desc>
+
         </Left>
         <Right>
-          <Canvas>
-            <OrbitControls enableZoom={false} />
-            <ambientLight intensity={1} />
-            <directionalLight position={[1, 3, -2]} />
-            <Sphere args={[1, 100, 200]} scale={2.5}>
-              <MeshDistortMaterial color="#7A4A9D" attach="material" distort={0.5} speed={4} />
-            </Sphere>
-          </Canvas>
-          <Img src="./img/Cat.png" />
+          <Game/>
         </Right>
       </Container>
     </Section>

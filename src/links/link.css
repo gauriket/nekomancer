@@ -1,0 +1,43 @@
+/* FigmaLink.css */
+
+/* Link color in normal state */
+.figma-link {
+    color: #da4ea2;; /* Change this to your desired link color */
+    text-decoration: none;
+  }
+  
+  /* Link color after it has been visited */
+  .figma-link:visited {
+    color: #da4ea2;; /* Change this to your desired visited link color */
+  }
+  
+  /* Link color on hover */
+  .figma-link:hover {
+    color: white; /* Change this to your desired link color on hover */
+  }
+  
+  /* Link color when clicked */
+  .figma-link:active {
+    color: #da4ea2;; /* Change this to your desired link color when clicked */
+  }
+  
+.button-link {
+    color: white;; /* Change this to your desired link color */
+    text-decoration: none;
+  }
+  
+  /* Link color after it has been visited */
+  .button-link:visited {
+    color: white;; /* Change this to your desired visited link color */
+  }
+  
+  /* Link color on hover */
+  .button-link:hover {
+    color: white; /* Change this to your desired link color on hover */
+  }
+  
+  /* Link color when clicked */
+  .button-link:active {
+    color: white;; /* Change this to your desired link color when clicked */
+  }
+  

@@ -1,10 +1,11 @@
 // import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import WebDesign from "./WebDesign";
+import UIUX from "./UIUX";
 
 const data = [
-  "Web Design",
-  "Development",
-  "Illustration",
+  "Web Development",
   "UI/UX",
 ];
 
@@ -17,6 +18,9 @@ const Section = styled.div`
   color: black;
   font-size: 14px;
   font-weight: 300;
+  @media only screen and (max-width: 500px) {
+    padding-top: 120px;
+  }
 `;
 
 const Container = styled.div`
@@ -28,6 +32,10 @@ const Container = styled.div`
     width: 100%;
     flex-direction: column;
   }
+  @media only screen and (max-width: 500px) {
+    padding-top: 120px;
+  }
+  
 `;
 
 const Left = styled.div`
@@ -39,6 +47,7 @@ const Left = styled.div`
     padding: 20px;
     justify-content: center;
   }
+  
 `;
 
 const List = styled.ul`
@@ -55,12 +64,6 @@ const ListItem = styled.li`
   color: transparent;
   -webkit-text-stroke: 1px white;
   position: relative;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 24px;
-    color: white;
-    -webkit-text-stroke: 0px;
-  }
 
   ::after {
     content: "${(props) => props.text}";
@@ -79,11 +82,18 @@ const ListItem = styled.li`
 
       @keyframes moveText {
         to {
-          width: 100%;
-        }
+          width: 100%; 
+        } 
       }
     }
   }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 50px;
+    color: white;
+    -webkit-text-stroke: 0px;
+  }
+
 `;
 
 const Right = styled.div`
@@ -91,20 +101,22 @@ const Right = styled.div`
 `;
 
 const Works = () => {
+  const [work, setWork]=useState("Web Development")
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item} >
+              <ListItem key={item} text={item} onClick={()=>setWork(item)}>
                 {item}
               </ListItem>
             ))}
           </List>
         </Left>
         <Right>
-          
+          {work==="Web Development"? (<WebDesign/>):
+           (<UIUX/>)}
         </Right>
       </Container>
     </Section>
