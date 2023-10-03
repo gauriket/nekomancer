@@ -1,0 +1,30 @@
+/* works.css */
+
+.list-item {
+  font-size: 90px;
+  font-weight: bold;
+  cursor: pointer;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.list-item::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: pink;
+  width: 0px;
+  overflow: hidden;
+}
+
+.list-item:hover {
+  color: black;
+}
+
+.list-item:hover::after {
+  width: 100%;
+  transition: width 0.5s linear;
+}

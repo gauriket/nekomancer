@@ -1,13 +1,12 @@
-// import React, { useState } from "react";
+// Works.js
+
 import { useState } from "react";
 import styled from "styled-components";
 import WebDesign from "./WebDesign";
 import UIUX from "./UIUX";
+import "./works.css"; // Import the CSS file
 
-const data = [
-  "Web Development",
-  "UI/UX",
-];
+const data = ["Web Development", "UI/UX"];
 
 const Section = styled.div`
   height: 100vh;
@@ -35,7 +34,6 @@ const Container = styled.div`
   @media only screen and (max-width: 500px) {
     padding-top: 120px;
   }
-  
 `;
 
 const Left = styled.div`
@@ -47,7 +45,6 @@ const Left = styled.div`
     padding: 20px;
     justify-content: center;
   }
-  
 `;
 
 const List = styled.ul`
@@ -57,67 +54,30 @@ const List = styled.ul`
   gap: 20px;
 `;
 
-const ListItem = styled.li`
-  font-size: 90px;
-  font-weight: bold;
-  cursor: pointer;
-  color: transparent;
-  -webkit-text-stroke: 1px white;
-  position: relative;
-
-  ::after {
-    content: "${(props) => props.text}";
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: pink;
-    width: 0px;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  &:hover {
-    ::after {
-      animation: moveText 0.5s linear both;
-
-      @keyframes moveText {
-        to {
-          width: 100%; 
-        } 
-      }
-    }
-  }
-
-  @media only screen and (max-width: 1200px) {
-    font-size: 50px;
-    color: white;
-    -webkit-text-stroke: 0px;
-  }
-
-`;
-
 const Right = styled.div`
   flex: 1;
 `;
 
 const Works = () => {
-  const [work, setWork]=useState("Web Development")
+  const [work, setWork] = useState("Web Development");
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item} onClick={()=>setWork(item)}>
+              <li
+                className="list-item"
+                data-text={item}
+                key={item}
+                onClick={() => setWork(item)}
+              >
                 {item}
-              </ListItem>
+              </li>
             ))}
           </List>
         </Left>
-        <Right>
-          {work==="Web Development"? (<WebDesign/>):
-           (<UIUX/>)}
-        </Right>
+        <Right>{work === "Web Development" ? <WebDesign /> : <UIUX />}</Right>
       </Container>
     </Section>
   );
