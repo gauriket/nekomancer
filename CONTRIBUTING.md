@@ -1,4 +1,4 @@
-# Contributing to nekomance
+# Contributing to nekomancer
 
 Thank you for considering contributing to nekomancer. We appreciate your support!
 
@@ -26,10 +26,6 @@ We welcome contributions in the form of pull requests. To submit a pull request:
 4. Write tests if applicable.
 5. Ensure your code follows our coding style.
 6. Submit a pull request with a clear description of the changes made and the problem solved.
-
-### Code Style
-
-We follow a specific coding style in our project. Please make sure your code adheres to it. If you're not sure about the style, feel free to ask in the pull request.
 
 ## Thank You
 
